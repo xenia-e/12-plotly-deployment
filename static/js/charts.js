@@ -1,4 +1,14 @@
 var dataPath = 'static/data/samples.json'
+var fontStyle = {
+    family: 'Courier New, monospace',
+    size: 18,
+    color: '#7f7f7f',   
+}
+var fontTitle = {
+    family: 'Courier New, monospace',
+    size: 24,
+    color: '#7f7f7f'
+}
 function init() {
   // Grab a reference to the dropdown select element
   var selector = d3.select("#selDataset");
@@ -93,12 +103,48 @@ function buildCharts(sample) {
     }];
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-      title: 'Top 10 Bacteria Cultures Found',
-
+      title: {
+        text:'Top 10 Bacteria Cultures Found',
+        font: fontTitle
+}
     };
     var config = {responsive: true}
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot('plot', barData, barLayout, config);
+  //});
+
+  // Bar and Bubble charts
+    // 1. Create the trace for the bubble chart.
+    var bubbleData = [{
+      x: otuIds,
+      y: sampleValues,
+      text: otuLabels,
+      mode: 'markers',
+      marker: {
+        size:sampleValues,
+        opacity: 0.65, 
+        color: otuIds,
+        colorscale: 'YlGnBu'
+      },
+    }];
+
+    // 2. Create the layout for the bubble chart.
+    var bubbleLayout = {
+      title: {
+        text:'Bacteria Samples Per Culture',
+        font: fontTitle
+      },
+      xaxis: {
+        title: {
+          text: 'OTU ID',
+          font: fontStyle
+        },
+      }
+    };
+
+    // 3. Use Plotly to plot the data with the layout.
+    Plotly.newPlot('bubble_plot', bubbleData, bubbleLayout); 
   });
 }
+
 
