@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-md-2">
             <div class="well">
-            <h5>Test Subject ID No.:</h5>
+            <h3>Test Subject ID No.:</h3>
             <!-- <select id="selDataset"></select> -->
             <select id="selDataset" onchange="optionChanged(this.value)"></select>
             </div>
@@ -35,20 +35,42 @@
         <div class="col-md-10">
             <div class="row">
                 <div class="col-md-6">
-                    <div id="plot"></div>
+                    <div id="bar" class="plot"></div>
                 </div>
                 <div class="col-md-6">
-                    <div id="gauge_plot"></div>
+                    <div id="gauge" class="plot"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div id="bubble_plot"></div>
+                    <div id="bubble" class="plot"></div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    </div>
+    <footer class='bd-footer py-5 mt-5 bg-light'>
+        <div class="container  py-5">  
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>About Belly Button Biodiversity Dashboard</h3><hr>
+                    <p class="small">
+                        Have you ever looked up at the night sky and wondered what kinds of life might exist out there? Well, you can look down – at your belly button that is – and wonder the exact same thing.
+
+                        According to our research the belly button is home to an array of bacterial life ranging from the common (like Staphylococci) to the rare (like Archaea which have never been found before on human skin). Some bacteria, like those belonging to the Bacillus genus (pictured above), are feisty – they battle against fungi and viruses. Other bacteria, like those in the Micrococcus genus, are responsible for body odor!
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h3>Why belly buttons?</h3><hr>
+                    <p class="small">In our experience, the belly button is among the most ridiculous parts of the body. It is ridiculous enough that people who don’t necessarily like nature, say for example birds, can still be convinced to sample their belly button. […] The other reasons were more technical. The belly button is relatively less disturbed than, say, your hands. It is less exposed to all the chemicals and other people we bump up against during an ordinary day. In that way it is the closest thing we might find to an “old growth” sample of skin. </p>
+                </div>
+                <div class="col-md-3">
+                    <h3>What is the lesson?</h3><hr>
+                    <p class="small">While we can now predict which bacteria tend to be frequent and common in belly buttons, we are  totally unable to predict which of the common species will be found on any particular person. Gender doesn’t seem to matter, nor does age, nor does innie/outie, nor does where you live now or where you were born. So that is what we are moving toward, trying to understand what governs the species that are found on any particular person […] and how we might alter our behavior in ways to favor species that keep us healthy and disfavor those that do us harm.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 <!--Scripts-->
     <script src="./static/js/data.js"></script>
     <script src="./static/js/charts.js"></script>

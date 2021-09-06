@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+h1, h2, h3 {
+  font-family: 'Space Mono', monospace;
+}
+.jumbotron{
+  background: url(../images/background.jpg) center no-repeat;
+  background-size: 100%;
+  color: whitesmoke;
+}
+.jumbotron>h1{
+  text-shadow: 0px 0px 10px  #071a40;
+  color: #44C4F4;
+
+}
+.jumbotron p {
+  letter-spacing: 0.03em;
+  font-weight: 400;
+  background: #2661D2;
+}
+.well {
+  background-color: #0B265B;
+  color:whitesmoke;
+  
+}
+select{
+    color: #0b265b;
+}
+.well>select{
+  width: 90%;
+  margin:1em auto;
+}
+.panel-primary{
+  border-color: #0B265B;
+}
+.panel-primary>.panel-heading{
+  background-color: #0B265B;
+  border-color: #0B265B;
+}
+footer{
+  background: #174199;
+  color:whitesmoke;
+  margin-top: 15em;
+  padding-bottom: 10em;
+}

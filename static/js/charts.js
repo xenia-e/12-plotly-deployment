@@ -1,13 +1,12 @@
 var dataPath = 'static/data/samples.json'
 var fontStyle = {
-    family: 'Courier New, monospace',
-    size: 18,
-    color: '#7f7f7f',   
+    family: 'Space Mono, monospace',
+    size: 16,
+    color: '#0B265B',   
 }
 var fontTitle = {
-    family: 'Courier New, monospace',
-    size: 24,
-    color: '#7f7f7f'
+    family: 'Space Mono, monospace',
+    color: '#0B265B'
 }
 function init() {
   // Grab a reference to the dropdown select element
@@ -106,14 +105,13 @@ function buildCharts(sample) {
     // 9. Create the layout for the bar chart. 
     var barLayout = {
       title: {
-        text:'Top 10 Bacteria Cultures Found',
+        text:'Top 10 Bacteria Cultures Found (ID ' + sample + ' )',
         font: fontTitle
 }
     };
     var config = {responsive: true}
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot('plot', barData, barLayout, config);
-  //});
+    Plotly.newPlot('bar', barData, barLayout, config);
 
   // Bar and Bubble charts
     // 1. Create the trace for the bubble chart.
@@ -133,7 +131,7 @@ function buildCharts(sample) {
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
       title: {
-        text:'Bacteria Samples Per Culture',
+        text:'Bacteria Samples Per Culture (ID ' + sample + ' )',
         font: fontTitle
       },
       xaxis: {
@@ -145,7 +143,7 @@ function buildCharts(sample) {
     };
 
     // 3. Use Plotly to plot the data with the layout.
-    Plotly.newPlot('bubble_plot', bubbleData, bubbleLayout); 
+    Plotly.newPlot('bubble', bubbleData, bubbleLayout); 
     
 
     // 4. Create the trace for the gauge chart.
@@ -155,7 +153,7 @@ function buildCharts(sample) {
       {
         domain: { x: [0, 1], y: [0, 1] },
         value: wfreqFloat,
-        title: { text: "Scrubs Per Week" },
+        title: { text: "Scrubs Per Week"},
         type: "indicator",
         mode: "gauge+number",
         gauge: {
@@ -174,8 +172,9 @@ function buildCharts(sample) {
     
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
+      // margin: { t: 0, b: 0 }, 
       title: {
-        text: 'Bellybutton Washing Frequency',
+        text: 'Bellybutton Washing Frequency (ID ' + sample + ' )',
         font: fontTitle
       },
 
@@ -183,7 +182,7 @@ function buildCharts(sample) {
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot('gauge_plot', gaugeData, gaugeLayout);
+    Plotly.newPlot('gauge', gaugeData, gaugeLayout, config);
   });
 }
 
